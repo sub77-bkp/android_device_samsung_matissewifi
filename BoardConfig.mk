@@ -33,10 +33,11 @@ TARGET_UNIFIED_DEVICE := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1023410176
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 5930614784
+#BOARD_USERDATAIMAGE_PARTITION_SIZE := 5930614784
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTYPE_MOUNT_OPTIONS := ext4=max_batch_time=0,commit=1,data=ordered,nobarrier,errors=panic,nodelalloc|f2fs=errors=recover
 
 # inherit from the proprietary version
 -include vendor/motorola/falcon/BoardConfigVendor.mk

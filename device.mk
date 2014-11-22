@@ -21,9 +21,7 @@ $(call inherit-product, vendor/motorola/falcon/falcon-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Ramdisk
-PRODUCT_PACKAGES += \
-    fstab.qcom \
-    gpe-fstab.qcom
+PRODUCT_PACKAGES += fstab.qcom
 
 # Wifi
 PRODUCT_COPY_FILES += \
