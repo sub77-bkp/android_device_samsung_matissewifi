@@ -20,7 +20,7 @@ audio.offload.24bit.enable=false
 audio.offload.buffer.size.kb=32
 audio.offload.gapless.enabled=false
 audio.offload.multiple.enabled=false
-audio.offload.pcm.enable=true
+audio.offload.pcm.enable=false
 av.offload.enable=false
 av.streaming.offload.enable=false
 media.aac_51_output_enabled=true
@@ -30,13 +30,11 @@ use.dedicated.device.for.voip=true
 use.voice.path.for.pcm.voip=false
 
 # Bluetooth
-qcom.bt.le_dev_pwr_class=1 
 ro.bluetooth.hfp.ver=1.6
 ro.qualcomm.bt.hci_transport=smd
 
 # Display
 debug.composition.type=c2d 
-debug.enabletr=0
 ro.opengles.version=196608
 ro.sf.lcd_density=320
 
@@ -69,6 +67,5 @@ ro.qc.sdk.gestures.camera=false
 ro.qc.sdk.camera.facialproc=false
 ro.qc.sdk.sensors.gestures=true
 
-# Wifi
-persist.sys.qc.sub.rdump.on=1
-persist.sys.ssr.restart_level=3
+# Wi-fi
+wifi.interface=wlan0
