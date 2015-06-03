@@ -19,5 +19,5 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 $(call inherit-product, device/samsung/s3ve3g/full_s3ve3g.mk)
 
 # Release name
-PRODUCT_RELEASE_NAME := GT-I9301I
+PRODUCT_RELEASE_NAME := SM-T530
 PRODUCT_NAME := cm_s3ve3g

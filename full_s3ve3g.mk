@@ -22,5 +22,5 @@ $(call inherit-product, device/samsung/s3ve3g/device.mk)
 PRODUCT_DEVICE := s3ve3g
 PRODUCT_NAME := full_s3ve3g
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := GT-I9301I
+PRODUCT_MODEL := SM-T530
 PRODUCT_MANUFACTURER := samsung
