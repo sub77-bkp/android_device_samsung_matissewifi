@@ -76,6 +76,11 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
     ro.adb.secure=0
 
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.sf.lcd_density=160 \
+	ro.carrier=wifi-only \
+	ro.radio.noril=yes
+
 
 # Inherit from qcom-common
 $(call inherit-product, device/samsung/msm8226-common/msm8226.mk)
