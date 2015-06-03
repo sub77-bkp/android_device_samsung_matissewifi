@@ -12,13 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := device/samsung/s3ve3g
+LOCAL_PATH := device/samsung/matissewifi
+
+PRODUCT_CHARACTERISTICS := tablet
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Proprietary files
-$(call inherit-product, vendor/samsung/s3ve3g/s3ve3g-vendor.mk)
+$(call inherit-product, vendor/samsung/matissewifi/matissewifi-vendor.mk)
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
@@ -40,7 +42,9 @@ PRODUCT_COPY_FILES += \
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml
+	frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
+	frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml \
+	frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -71,6 +75,7 @@ PRODUCT_COPY_FILES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
     ro.adb.secure=0
+
 
 # Inherit from qcom-common
 $(call inherit-product, device/samsung/msm8226-common/msm8226.mk)

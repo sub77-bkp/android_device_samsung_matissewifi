@@ -1,25 +1,23 @@
-Device Tree For Samsung Galaxy S3 Neo
-===================================== 
+Device Tree For Samsung Galaxy Tab 4 10.1
+=========================================
 
 | Basic   | Spec Sheet                  |
 | -------:|:--------------------------- |
-| CPU     | Quad-core 1.4 GHz Cortex-A7 | 
+| CPU     | Quad-core 1.2 GHz Cortex-A7 |
 | CHIPSET | Qualcomm Snapdragon 400 |
 | GPU     | Adreno 305 |
 | Memory  | 1.5GB RAM |
 | Shipped Android Version | 4.4.2 |
 | Storage | 16GB |
 | MicroSD | Up to 64GB |
-| Battery | 2100 mAh |
-| Display | 5.38 x 2.78 x 0.34 in |
-| Camera  | 8 MP, 3264 x 2448 pixels |
+| Battery | 4000 mAh |
+| Display | 1280 x 800 (~149 ppi) |
+| Camera  | 3.15 MP, 2048 x 1536 pixels |
 
 
-![Galaxy S3 Neo](http://cdn2.gsmarena.com/vv/pics/samsung/samsung-i9301l-galaxy-s3-neo.jpg "Galaxy S3 Neo")
+![Galaxy Tab 4 10.1](http://cdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-tab-4-101-1.jpg "Galaxy Tab 4 10.1")
 
 This branch is for building CyanogenMod 12.0 Firmware.
 
 TODO:
 =======
-
-	- Fix NFC

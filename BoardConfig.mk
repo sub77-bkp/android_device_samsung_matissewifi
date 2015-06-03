@@ -15,15 +15,15 @@
 # Inherit from msm8226-common
 -include device/samsung/msm8226-common/BoardConfigCommon.mk
 
-TARGET_OTA_ASSERT_DEVICE := s3ve3g,s3ve3gds,s3ve3gjv
+TARGET_OTA_ASSERT_DEVICE := matissewifi,matissewifixx
 
-LOCAL_PATH := device/samsung/s3ve3g
+LOCAL_PATH := device/samsung/matissewifi
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # Init
-TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_s3ve3g.c
+TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_matissewifi.c
 TARGET_UNIFIED_DEVICE := true
 
 # Kernel
@@ -33,7 +33,7 @@ BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardwa
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
-TARGET_KERNEL_SOURCE := kernel/samsung/s3ve3g
+TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
 TARGET_KERNEL_CONFIG := msm8226-sec_defconfig
 TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
 TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
@@ -53,4 +53,4 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.qcom
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/s3ve3g
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
