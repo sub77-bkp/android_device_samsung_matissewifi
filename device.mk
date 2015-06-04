@@ -43,7 +43,6 @@ PRODUCT_COPY_FILES += \
 # Permissions
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:system/etc/permissions/android.hardware.sensor.gyroscope.xml \
-	frameworks/native/data/etc/android.hardware.consumerir.xml:system/etc/permissions/android.hardware.consumerir.xml \
 	frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
 
 # Ramdisk
@@ -77,7 +76,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.adb.secure=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sf.lcd_density=160 \
 	ro.carrier=wifi-only \
 	ro.radio.noril=yes
 
