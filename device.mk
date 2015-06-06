@@ -79,6 +79,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.carrier=wifi-only \
 	ro.radio.noril=yes
 
+PRODUCT_PACKAGES += \
+	OpenDelta
 
 # Inherit from qcom-common
 $(call inherit-product, device/samsung/msm8226-common/msm8226.mk)
