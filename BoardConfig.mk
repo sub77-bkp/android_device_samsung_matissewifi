@@ -35,7 +35,11 @@ TARGET_KRAIT_BIONIC_BBTHRESH 		:= 64
 TARGET_KRAIT_BIONIC_PLDSIZE 		:= 64
 
 BOARD_CUSTOM_BOOTIMG_MK 			:= device/samsung/matissewifi/custombootimg.mk
-TARGET_PREBUILT_KERNEL 				:= device/samsung/matissewifi/kernel
+#TARGET_PREBUILT_KERNEL 				:= device/samsung/matissewifi/kernel
+
+TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
+TARGET_KERNEL_CONFIG := twrp-matissewifi_defconfig
+TARGET_KERNEL_VARIANT_CONFIG := twrp-variant_defconfig
 
 TARGET_RECOVERY_FSTAB 				:= device/samsung/matissewifi/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT 		:= "RGBX_8888"
