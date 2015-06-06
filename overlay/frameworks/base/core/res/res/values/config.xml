@@ -61,14 +61,14 @@
     <!-- Array of output values for button backlight corresponding to the LUX values
          in the config_autoBrightnessLevels array.  This array should have size one greater
          than the size of the config_autoBrightnessLevels array.
-         This must be overridden in platform specific overlays -->
+         This must be overridden in platform specific overlays 
     <integer-array name="config_autoBrightnessButtonBacklightValues">
         <item>255</item>
         <item>255</item>
         <item>0</item>
         <item>0</item>
         <item>0</item>
-    </integer-array>
+    </integer-array> -->
 
     <!-- Screen brightness when dozing. -->
     <integer name="config_screenBrightnessDoze">17</integer>
@@ -77,24 +77,24 @@
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
     <bool name="config_dozeAfterScreenOff">true</bool>
 
-    <!-- Default color for notification LED is blue. -->
-    <color name="config_defaultNotificationColor">#ff0000ff</color>
+    <!-- Default color for notification LED is blue. 
+    <color name="config_defaultNotificationColor">#ff0000ff</color> -->
 
     <!-- Default value for led color when battery is medium charged -->
     <!-- The green LED is brighter than red, bias closer to yellow. -->
     <integer name="config_notificationsBatteryMediumARGB">0xFFFF6000</integer>
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveNotificationLed">true</bool>
+    <bool name="config_intrusiveNotificationLed">false</bool>
 
     <!-- Does the notification LED support multiple colors? Used to decide if the user can change the colors -->
-    <bool name="config_multiColorNotificationLed">true</bool>
+    <bool name="config_multiColorNotificationLed">false</bool>
 
     <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveBatteryLed">true</bool>
+    <bool name="config_intrusiveBatteryLed">false</bool>
 
     <!-- Does the battery LED support multiple colors? Used to decide if the user can change the colors -->
-    <bool name="config_multiColorBatteryLed">true</bool>
+    <bool name="config_multiColorBatteryLed">false</bool>
 
     <!-- XXXXX NOTE THE FOLLOWING RESOURCES USE THE WRONG NAMING CONVENTION.
          Please don't copy them, copy anything else. -->
@@ -166,7 +166,7 @@
          with different orientations.  Since we cannot always tell these docks
          apart and the docks cannot report their true orientation on their own,
          we rely on gravity to determine the effective orientation. -->
-    <bool name="config_deskDockEnablesAccelerometer">false</bool>
+    <bool name="config_deskDockEnablesAccelerometer">true</bool>
 
     <!-- Enables or disables fading edges when marquee is enabled in TextView. -->
     <bool name="config_ui_enableFadingMarquee">true</bool>
@@ -257,5 +257,11 @@
 
     <!-- Whether UI for multi user should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
+
+    <!-- This device is not "voice capable"; it's data-only. -->
+    <bool name="config_voice_capable">false</bool>
+
+    <!-- This device does allow sms service. -->
+    <bool name="config_sms_capable">false</bool>
 
 </resources>
