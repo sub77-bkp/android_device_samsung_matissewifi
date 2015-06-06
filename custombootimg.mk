@@ -1,4 +1,4 @@
-DTB := device/samsung/matissewifi/dtb
+DTB := device/samsung/matissewifi/kernel/dtb
 
 LZMA_RAMDISK := $(PRODUCT_OUT)/ramdisk-recovery-lzma.img
 

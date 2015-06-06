@@ -35,11 +35,11 @@ TARGET_KRAIT_BIONIC_BBTHRESH 		:= 64
 TARGET_KRAIT_BIONIC_PLDSIZE 		:= 64
 
 BOARD_CUSTOM_BOOTIMG_MK 			:= device/samsung/matissewifi/custombootimg.mk
-#TARGET_PREBUILT_KERNEL 				:= device/samsung/matissewifi/kernel
+TARGET_PREBUILT_KERNEL 				:= device/samsung/matissewifi/kernel
 
-TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
-TARGET_KERNEL_CONFIG := twrp-matissewifi_defconfig
-TARGET_KERNEL_VARIANT_CONFIG := twrp-variant_defconfig
+#TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
+#TARGET_KERNEL_CONFIG := twrp-matisse_defconfig
+#TARGET_KERNEL_VARIANT_CONFIG := twrp-matissewifi_defconfig
 
 TARGET_RECOVERY_FSTAB 				:= device/samsung/matissewifi/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT 		:= "RGBX_8888"
@@ -94,4 +94,9 @@ MR_PIXEL_FORMAT := "RGBX_8888"
 MR_USE_QCOM_OVERLAY := true
 MR_QCOM_OVERLAY_HEADER := device/samsung/matissewifi/multirom/mr_qcom_overlay.h
 MR_QCOM_OVERLAY_CUSTOM_PIXEL_FORMAT := MDP_RGBX_8888
+MR_DEVICE_HOOKS := device/samsung/matissewifi/multirom/mr_hooks.c
+MR_DEVICE_HOOKS_VER := 5
+#MR_DEVICE_RECOVERY_HOOKS := device/samsung/matissewifi/multirom/mr_hooks_recovery.c
+#MR_DEVICE_RECOVERY_HOOKS_VER := 1
+MR_CONTINUOUS_FB_UPDATE := true
 

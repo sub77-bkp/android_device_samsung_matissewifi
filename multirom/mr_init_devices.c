@@ -46,8 +46,8 @@ const char *mr_init_devices[] =
     "/sys/devices/virtual/misc/ion",
 
     // Encryption
-    "/sys/devices/virtual/misc/device-mapper",
-    "/sys/devices/virtual/qseecom/qseecom",
+//    "/sys/devices/virtual/misc/device-mapper",
+//    "/sys/devices/virtual/qseecom/qseecom",
 
     NULL
 };
