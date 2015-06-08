@@ -80,9 +80,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.radio.noril=yes
 
 PRODUCT_PACKAGES += \
-    openssl \
     openssh \
-	OpenDelta
+	OpenDelta \
+	OpenCamera
+
+# Radio (needed for audio controls even on wifi-only)
+PRODUCT_PACKAGES += \
+    libsecril-client \
+    libsecril-client-sap
 
 # Inherit from qcom-common
 $(call inherit-product, device/samsung/msm8226-common/msm8226.mk)
