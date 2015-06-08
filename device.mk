@@ -80,7 +80,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.radio.noril=yes
 
 PRODUCT_PACKAGES += \
-	OpenDelta \
-	OpenCamera
+    openssl \
+    openssh \
+	OpenDelta
+
 # Inherit from qcom-common
 $(call inherit-product, device/samsung/msm8226-common/msm8226.mk)
