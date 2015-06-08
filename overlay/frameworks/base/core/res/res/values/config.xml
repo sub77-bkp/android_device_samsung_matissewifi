@@ -81,20 +81,20 @@
     <color name="config_defaultNotificationColor">#ff0000ff</color> -->
 
     <!-- Default value for led color when battery is medium charged -->
-    <!-- The green LED is brighter than red, bias closer to yellow. -->
-    <integer name="config_notificationsBatteryMediumARGB">0xFFFF6000</integer>
+    <!-- The green LED is brighter than red, bias closer to yellow. 
+    <integer name="config_notificationsBatteryMediumARGB">0xFFFF6000</integer>-->
 
-    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveNotificationLed">false</bool>
+    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option
+    <bool name="config_intrusiveNotificationLed">false</bool> -->
 
-    <!-- Does the notification LED support multiple colors? Used to decide if the user can change the colors -->
-    <bool name="config_multiColorNotificationLed">false</bool>
+    <!-- Does the notification LED support multiple colors? Used to decide if the user can change the colors 
+    <bool name="config_multiColorNotificationLed">false</bool>-->
 
-    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveBatteryLed">false</bool>
+    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option 
+    <bool name="config_intrusiveBatteryLed">false</bool>-->
 
-    <!-- Does the battery LED support multiple colors? Used to decide if the user can change the colors -->
-    <bool name="config_multiColorBatteryLed">false</bool>
+    <!-- Does the battery LED support multiple colors? Used to decide if the user can change the colors 
+    <bool name="config_multiColorBatteryLed">false</bool>-->
 
     <!-- XXXXX NOTE THE FOLLOWING RESOURCES USE THE WRONG NAMING CONVENTION.
          Please don't copy them, copy anything else. -->
