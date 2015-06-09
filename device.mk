@@ -80,7 +80,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.radio.noril=yes
 
 PRODUCT_PACKAGES += \
-    openssh \
+	openssh \
+	fuse \
+	sshfs \
 	OpenDelta \
 	OpenCamera
 
