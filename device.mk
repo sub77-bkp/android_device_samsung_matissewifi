@@ -77,12 +77,12 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.carrier=wifi-only \
-	ro.radio.noril=yes
+	ro.radio.noril=yes \
+	ro.sf.lcd_density=160
 
 PRODUCT_PACKAGES += \
 	openssh \
 	fuse \
-	sshfs \
 	OpenDelta \
 	OpenCamera
 
