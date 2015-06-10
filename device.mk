@@ -81,9 +81,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.sf.lcd_density=160
 
 PRODUCT_PACKAGES += \
-	openssh \
-	fuse \
-	OpenDelta \
 	OpenCamera
 
 # Radio (needed for audio controls even on wifi-only)
