@@ -22,8 +22,14 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     charger
 
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := device/samsung/matissewifi/kernel/kernel-f2fs
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
 PRODUCT_COPY_FILES += \
-    device/samsung/matissewifi/kernel/kernel-f2fs:kernel 
+    $(LOCAL_KERNEL):kernel 
 
 PRODUCT_COPY_FILES += \
 	device/samsung/matissewifi/init.recovery.qcom.rc:root/init.recovery.qcom.rc \

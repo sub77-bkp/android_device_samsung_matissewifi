@@ -34,12 +34,20 @@ TARGET_KRAIT_BIONIC_PLDTHRESH 		:= 10
 TARGET_KRAIT_BIONIC_BBTHRESH 		:= 64
 TARGET_KRAIT_BIONIC_PLDSIZE 		:= 64
 
-BOARD_CUSTOM_BOOTIMG_MK 			:= device/samsung/matissewifi/custombootimg.mk
-TARGET_PREBUILT_KERNEL 				:= device/samsung/matissewifi/kernel
+#BOARD_CUSTOM_BOOTIMG_MK 			:= device/samsung/matissewifi/custombootimg.mk
+#TARGET_PREBUILT_KERNEL 				:= device/samsung/matissewifi/kernel/kernel-f2fs
 
-#TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
-#TARGET_KERNEL_CONFIG := twrp-matisse_defconfig
-#TARGET_KERNEL_VARIANT_CONFIG := twrp-matissewifi_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
+TARGET_KERNEL_CONFIG := twrp-test_defconfig
+#TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matissewifi/mkbootimg.mk
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_PAGESIZE := 4096
+BOARD_KERNEL_SEPARATED_DT := true
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
+
+
 
 TARGET_RECOVERY_FSTAB 				:= device/samsung/matissewifi/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT 		:= "RGBX_8888"
@@ -65,7 +73,7 @@ TW_HAS_DOWNLOAD_MODE 				:= true
 TW_NO_USB_STORAGE 					:= true
 
 BOARD_BOOTIMAGE_PARTITION_SIZE 		:= 10485760
-BOARD_RECOVERYIMAGE_PARTITION_SIZE	:= 10485760
+BOARD_RECOVERYIMAGE_PARTITION_SIZE	:= 11485760
 BOARD_SYSTEMIMAGE_PARTITION_SIZE 	:= 1073741824
 BOARD_USERDATAIMAGE_PARTITION_SIZE 	:= 2147483648
 BOARD_FLASH_BLOCK_SIZE 				:= 131072 # (BOARD_KERNEL_PAGESIZE * 64)
