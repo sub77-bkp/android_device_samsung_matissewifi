@@ -80,9 +80,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.radio.noril=yes \
 	ro.sf.lcd_density=160
 
-PRODUCT_PACKAGES += \
-	OpenCamera
-
 # Radio (needed for audio controls even on wifi-only)
 PRODUCT_PACKAGES += \
     libsecril-client \
