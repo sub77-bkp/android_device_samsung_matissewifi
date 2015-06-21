@@ -29,8 +29,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
 
 # Doze
-PRODUCT_PACKAGES += \
-    SamsungDoze
+#PRODUCT_PACKAGES += \
+#    SamsungDoze
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -77,13 +77,13 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.carrier=wifi-only \
-	ro.radio.noril=yes \
-	ro.sf.lcd_density=160
+	ro.radio.noril=yes
 
 # Radio (needed for audio controls even on wifi-only)
 PRODUCT_PACKAGES += \
     libsecril-client \
-    libsecril-client-sap
+    libsecril-client-sap \
+	openssh
 
 # Inherit from qcom-common
 $(call inherit-product, device/samsung/msm8226-common/msm8226.mk)
