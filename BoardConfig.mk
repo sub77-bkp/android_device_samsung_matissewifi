@@ -52,7 +52,15 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.qcom
 
-# Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
+# Compiler flags
+TARGET_GCC_VERSION_EXP := 4.9
+TARGET_USE_PIPE := true
+USE_O3_OPTIMIZATIONS := true
+SUPPRES_UNUSED_WARNING := true
+KRAIT_TUNINGS := true
+ENABLE_GCCONLY := true
+GRAPHITE_OPTS := true
+STRICT_ALIASING := true
+BOOT_ZIP_OUT_FILE := SlimKernel-$(TARGET_DEVICE)-$(PLATFORM_VERSION)-$(shell date +"%Y%m%d")
 
 
