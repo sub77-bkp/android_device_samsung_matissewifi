@@ -24,7 +24,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # Init
 TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_matissewifi.c
-#TARGET_UNIFIED_DEVICE := true
+TARGET_UNIFIED_DEVICE := true
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
@@ -53,18 +53,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.qcom
 
 # Releasetools
-# TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
 
-# BlissPop Configs
-TARGET_TC_ROM := 4.9-sm
-TARGET_TC_KERNEL := 4.9-sm
-BLISSIFY := true
-BLISS_O3 := true
-BLISS_STRICT := true
-BLISS_GRAPHITE := true
-BLISS_KRAIT := true
-BLISS_PIPE := true
-TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
 
--include vendor/bliss/config/sm.mk
