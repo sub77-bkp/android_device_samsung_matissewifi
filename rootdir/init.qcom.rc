@@ -536,6 +536,7 @@ on boot
     chmod 0664 /sys/class/input/input2/enabled
 
     # Permission for touchkey
+    chown root system /sys/class/sec/sec_touchkey/tsp_keys_enabled
     chown system system /sys/class/sec/sec_touchkey/keypad_enable
     chown system system /sys/class/sec/sec_touchkey/touchkey_brightness
     chown system system /sys/class/sec/sec_touchkey/touchkey_menu
