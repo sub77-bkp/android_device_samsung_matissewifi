@@ -29,8 +29,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml
 
 # Doze
-#PRODUCT_PACKAGES += \
-#    SamsungDoze
+PRODUCT_PACKAGES += \
+    SamsungDoze
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -83,7 +83,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     libsecril-client \
     libsecril-client-sap \
-	openssh
+	openssh \
+	sshfs
 
 # Inherit from qcom-common
 $(call inherit-product, device/samsung/msm8226-common/msm8226.mk)
