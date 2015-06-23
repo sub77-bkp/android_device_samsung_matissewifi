@@ -23,7 +23,7 @@ LOCAL_PATH := device/samsung/matissewifi
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # Hardware
-BOARD_HARDWARE_CLASS += device/samsung/mondrianwifi/cmhw
+BOARD_HARDWARE_CLASS += device/samsung/matissewifi/cmhw
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
