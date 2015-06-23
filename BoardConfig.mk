@@ -38,8 +38,9 @@ TARGET_KRAIT_BIONIC_PLDSIZE 		:= 64
 #TARGET_PREBUILT_KERNEL 				:= device/samsung/matissewifi/kernel/kernel-f2fs
 
 TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
-TARGET_KERNEL_CONFIG := twrp-test_defconfig
+TARGET_KERNEL_CONFIG := twrp-sec_defconfig
 #TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
+#TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matissewifi/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.bootdevice=msm_sdcc.1
@@ -71,7 +72,7 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT 	:= "external_sd"
 TW_NO_REBOOT_BOOTLOADER 			:= true
 TW_HAS_DOWNLOAD_MODE 				:= true
 TW_NO_USB_STORAGE 					:= true
-
+TW_SCREEN_BLANK_ON_BOOT 			:= true
 BOARD_BOOTIMAGE_PARTITION_SIZE 		:= 10485760
 BOARD_RECOVERYIMAGE_PARTITION_SIZE	:= 11485760
 BOARD_SYSTEMIMAGE_PARTITION_SIZE 	:= 1073741824
@@ -80,31 +81,33 @@ BOARD_FLASH_BLOCK_SIZE 				:= 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 TARGET_USERIMAGES_USE_EXT4 			:= true
 TARGET_USERIMAGES_USE_F2FS 			:= true
 
-TW_INCLUDE_L_CRYPTO := true
-TW_INCLUDE_CRYPTO_SAMSUNG := true
-TW_CRYPTO_FS_TYPE := "ext4"
-TW_CRYPTO_REAL_BLKDEV := "/dev/block/mmcblk0p26"
-TW_CRYPTO_MNT_POINT := "/data"
-TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,noatime,noauto_da_alloc,journal_async_commit,errors=panic"
-TW_CRYPTO_FS_FLAGS := "0x00000406"
-TW_CRYPTO_KEY_LOC := "footer"
+#TW_INCLUDE_L_CRYPTO := true
+#TW_INCLUDE_CRYPTO_SAMSUNG := true
+#TW_CRYPTO_FS_TYPE := "ext4"
+#TW_CRYPTO_REAL_BLKDEV := "/dev/block/mmcblk0p26"
+#TW_CRYPTO_MNT_POINT := "/data"
+#TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,noatime,noauto_da_alloc,journal_async_commit,errors=panic"
+#TW_CRYPTO_FS_FLAGS := "0x00000406"
+#TW_CRYPTO_KEY_LOC := "footer"
 
 MR_INPUT_TYPE := type_b
 MR_INIT_DEVICES := device/samsung/matissewifi/multirom/mr_init_devices.c
 MR_DPI := hdpi
+MR_DPI_MUL := 1
 MR_DPI_FONT := 160
 MR_FSTAB := device/samsung/matissewifi/twrp.fstab
-MR_USE_MROM_FSTAB := true
+#MR_USE_MROM_FSTAB := true
 # End of first RAM region is 0x083fffff, so we set it to for example 0x06500000
-MR_KEXEC_MEM_MIN := 0x06500000
+MR_KEXEC_MEM_MIN := 0x06200000
+MR_RD_ADDR := 0x02200000
 MR_KEXEC_DTB := true
 MR_PIXEL_FORMAT := "RGBX_8888"
 MR_USE_QCOM_OVERLAY := true
 MR_QCOM_OVERLAY_HEADER := device/samsung/matissewifi/multirom/mr_qcom_overlay.h
 MR_QCOM_OVERLAY_CUSTOM_PIXEL_FORMAT := MDP_RGBX_8888
-MR_DEVICE_HOOKS := device/samsung/matissewifi/multirom/mr_hooks.c
-MR_DEVICE_HOOKS_VER := 5
+#MR_DEVICE_HOOKS := device/samsung/matissewifi/multirom/mr_hooks.c
+#MR_DEVICE_HOOKS_VER := 5
 #MR_DEVICE_RECOVERY_HOOKS := device/samsung/matissewifi/multirom/mr_hooks_recovery.c
 #MR_DEVICE_RECOVERY_HOOKS_VER := 1
-MR_CONTINUOUS_FB_UPDATE := true
+#MR_CONTINUOUS_FB_UPDATE := true
 
