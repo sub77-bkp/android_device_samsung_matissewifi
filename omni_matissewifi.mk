@@ -23,7 +23,7 @@ PRODUCT_PACKAGES += \
     charger
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/samsung/matissewifi/kernel/kernel-f2fs
+LOCAL_KERNEL := device/samsung/matissewifi/kernel/kernel
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif

@@ -34,20 +34,22 @@ TARGET_KRAIT_BIONIC_PLDTHRESH 		:= 10
 TARGET_KRAIT_BIONIC_BBTHRESH 		:= 64
 TARGET_KRAIT_BIONIC_PLDSIZE 		:= 64
 
-#BOARD_CUSTOM_BOOTIMG_MK 			:= device/samsung/matissewifi/custombootimg.mk
-#TARGET_PREBUILT_KERNEL 				:= device/samsung/matissewifi/kernel/kernel-f2fs
+BOARD_CUSTOM_BOOTIMG_MK 			:= device/samsung/matissewifi/custombootimg.mk
+TARGET_PREBUILT_KERNEL 				:= device/samsung/matissewifi/kernel/kernel
 
-TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
-TARGET_KERNEL_CONFIG := twrp-sec_defconfig
-#TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
-#TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matissewifi/mkbootimg.mk
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.bootdevice=msm_sdcc.1
-BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_SEPARATED_DT := true
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
+#TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
+#TARGET_KERNEL_CONFIG := twrp-sec_defconfig
+##TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
+##TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
+#BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matissewifi/mkbootimg.mk
+#BOARD_KERNEL_BASE := 0x00000000
+#BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.bootdevice=msm_sdcc.1
+#BOARD_KERNEL_PAGESIZE := 4096
+#BOARD_KERNEL_SEPARATED_DT := true
+#BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 
+BOARD_HAS_FLIPPED_SCREEN := true
+TW_ROTATION := 90
 
 
 TARGET_RECOVERY_FSTAB 				:= device/samsung/matissewifi/fstab.qcom
