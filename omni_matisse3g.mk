@@ -22,21 +22,21 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     charger
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/samsung/matissewifi/kernel/kernel
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
+#ifeq ($(TARGET_PREBUILT_KERNEL),)
+#LOCAL_KERNEL := device/samsung/matisse3g/kernel/kernel
+#else
+#LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+#endif
+
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_KERNEL):kernel 
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel 
+	device/samsung/matisse3g/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
+	device/samsung/matisse3g/twrp.fstab:recovery/root/etc/twrp.fstab
 
-PRODUCT_COPY_FILES += \
-	device/samsung/matissewifi/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
-	device/samsung/matissewifi/twrp.fstab:recovery/root/etc/twrp.fstab
-
-PRODUCT_NAME := omni_matissewifi
-PRODUCT_DEVICE := matissewifi
+PRODUCT_NAME := omni_matisse3g
+PRODUCT_DEVICE := matisse3g
 PRODUCT_BRAND := Samsung
-PRODUCT_MODEL := Galaxy Tab 4 10.1 WiFi
+PRODUCT_MODEL := SM-T531
 PRODUCT_MANUFACTURER := Samsung
