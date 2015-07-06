@@ -13,7 +13,7 @@
 # limitations under the License.
 
 
-#TARGET_OTA_ASSERT_DEVICE 			:= matisse3g,matisse3gxx
+TARGET_OTA_ASSERT_DEVICE 			:= matissewifi,matissewifixx
 
 # Architecture
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
@@ -34,14 +34,20 @@ TARGET_KRAIT_BIONIC_PLDTHRESH 		:= 10
 TARGET_KRAIT_BIONIC_BBTHRESH 		:= 64
 TARGET_KRAIT_BIONIC_PLDSIZE 		:= 64
 
-#BOARD_CUSTOM_BOOTIMG_MK 			:= device/samsung/matisse3g/custombootimg.mk
-#TARGET_PREBUILT_KERNEL 				:= device/samsung/matisse3g/kernel/kernel
+#BOARD_CUSTOM_BOOTIMG_MK 			:= device/samsung/matissewifi/custombootimg.mk
+#TARGET_PREBUILT_KERNEL 				:= device/samsung/matissewifi/kernel/kernel
 
 TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
 TARGET_KERNEL_CONFIG := twrp-sec_defconfig
-TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matisse3g_defconfig
+TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
 TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matisse3g/mkbootimg.mk
+
+#TARGET_KERNEL_SOURCE := kernel/samsung/matisse
+#TARGET_KERNEL_CONFIG := msm8226-sec_defconfig
+#TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matissewifi_defconfig
+#TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
+
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matissewifi/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_PAGESIZE := 2048
@@ -52,7 +58,7 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 #TW_ROTATION := 90
 
 
-TARGET_RECOVERY_FSTAB 				:= device/samsung/matisse3g/fstab.qcom
+TARGET_RECOVERY_FSTAB 				:= device/samsung/matissewifi/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT 		:= "RGBX_8888"
 TARGET_RECOVERY_QCOM_RTC_FIX		:= true
 BOARD_USE_CUSTOM_RECOVERY_FONT 		:= \"roboto_15x24.h\"
@@ -60,7 +66,7 @@ BOARD_SUPPRESS_SECURE_ERASE 		:= true
 RECOVERY_GRAPHICS_USE_LINELENGTH 	:= true
 RECOVERY_SDCARD_ON_DATA 			:= true
 HAVE_SELINUX 						:= true
-
+TW_DISABLE_DOUBLE_BUFFERING 		:= true
 TW_THEME 							:= landscape_hdpi
 TW_NEW_ION_HEAP 					:= true
 TW_BRIGHTNESS_PATH 					:= /sys/class/leds/lcd-backlight/brightness
@@ -93,11 +99,11 @@ TARGET_USERIMAGES_USE_F2FS 			:= true
 #TW_CRYPTO_KEY_LOC := "footer"
 
 MR_INPUT_TYPE := type_b
-MR_INIT_DEVICES := device/samsung/matisse3g/multirom/mr_init_devices.c
+MR_INIT_DEVICES := device/samsung/matissewifi/multirom/mr_init_devices.c
 MR_DPI := hdpi
 MR_DPI_MUL := 1
 MR_DPI_FONT := 160
-MR_FSTAB := device/samsung/matisse3g/twrp.fstab
+MR_FSTAB := device/samsung/matissewifi/twrp.fstab
 #MR_USE_MROM_FSTAB := true
 # End of first RAM region is 0x083fffff, so we set it to for example 0x06500000
 MR_KEXEC_MEM_MIN := 0x06200000
@@ -105,11 +111,11 @@ MR_RD_ADDR := 0x02200000
 MR_KEXEC_DTB := true
 MR_PIXEL_FORMAT := "RGBX_8888"
 MR_USE_QCOM_OVERLAY := true
-MR_QCOM_OVERLAY_HEADER := device/samsung/matisse3g/multirom/mr_qcom_overlay.h
+MR_QCOM_OVERLAY_HEADER := device/samsung/matissewifi/multirom/mr_qcom_overlay.h
 MR_QCOM_OVERLAY_CUSTOM_PIXEL_FORMAT := MDP_RGBX_8888
-#MR_DEVICE_HOOKS := device/samsung/matisse3g/multirom/mr_hooks.c
+#MR_DEVICE_HOOKS := device/samsung/matissewifi/multirom/mr_hooks.c
 #MR_DEVICE_HOOKS_VER := 5
-#MR_DEVICE_RECOVERY_HOOKS := device/samsung/matisse3g/multirom/mr_hooks_recovery.c
+#MR_DEVICE_RECOVERY_HOOKS := device/samsung/matissewifi/multirom/mr_hooks_recovery.c
 #MR_DEVICE_RECOVERY_HOOKS_VER := 1
 #MR_CONTINUOUS_FB_UPDATE := true
 
