@@ -13,4 +13,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_matisse3g.mk
+    $(LOCAL_DIR)/omni_matissewifi.mk
