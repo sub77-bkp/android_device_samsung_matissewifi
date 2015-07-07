@@ -16,12 +16,12 @@
 
 
 
-DEVICE_PACKAGE_OVERLAYS += device/motorola/falcon/overlay
-PRODUCT_PACKAGE_OVERLAYS += device/motorola/falcon/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/matissewifi/overlay
+PRODUCT_PACKAGE_OVERLAYS += device/samsung/matissewifi/overlay
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
-$(call inherit-product-if-exists, vendor/motorola/falcon/falcon-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/matissewifi/matissewifi-vendor.mk)
 
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
@@ -40,11 +40,11 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/motorola/falcon/ramdisk,root)
+    $(call find-copy-subdir-files,*,device/samsung/matissewifi/ramdisk,root)
 
 # Prebuilt
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/motorola/falcon/prebuilt/system,system)
+    $(call find-copy-subdir-files,*,device/samsung/matissewifi/prebuilt/system,system)
 
 #Call CodeAurora MSM8226 Tree
 include device/qcom/msm8226/msm8226.mk
@@ -99,7 +99,7 @@ TARGET_SCREEN_WIDTH := 720
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.enabletr=0 \
-    ro.sf.lcd_density=280
+    ro.sf.lcd_density=160
 
 # GPS
 PRODUCT_PACKAGES += \

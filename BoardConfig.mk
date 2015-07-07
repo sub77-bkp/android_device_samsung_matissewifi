@@ -17,17 +17,17 @@
 # inherit from common msm8226-common
 -include device/qcom/msm8226/BoardConfig.mk
 
-TARGET_SPECIFIC_HEADER_PATH += device/motorola/falcon/include
+TARGET_SPECIFIC_HEADER_PATH += device/samsung/matissewifi/include
 
 # Architecture
 TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := xt1031,xt1032,xt1033,xt1034,falcon_umts,falcon_umtsds,falcon_cdma,falcon_retuaws,falcon,falcon_gpe
+TARGET_OTA_ASSERT_DEVICE := matissewifi, matissewifixx
 
 # Board
-TARGET_BOARD_INFO_FILE := device/motorola/falcon/board-info.txt
+TARGET_BOARD_INFO_FILE := device/samsung/matissewifi/board-info.txt
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -49,7 +49,7 @@ AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
 #AUDIO_FEATURE_ENABLED_MULTIPLE_TUNNEL := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/motorola/falcon/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/matissewifi/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
@@ -61,7 +61,7 @@ TARGET_SYSTEMIMAGE_USE_SQUISHER := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Charger
-BOARD_CHARGING_MODE_BOOTING_LPM := /sys/mmi_lpm/lpm_mode
+# BOARD_CHARGING_MODE_BOOTING_LPM := /sys/mmi_lpm/lpm_mode
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
@@ -80,15 +80,15 @@ TARGET_USES_C2D_COMPOSITION := true
 
 # Kernel
 BOARD_KERNEL_SEPARATED_DT := true
-KERNEL_DEFCONFIG := falcon_defconfig
+KERNEL_DEFCONFIG := matissewifi_defconfig
 TARGET_KERNEL_SOURCE := kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.bootdevice=msm_sdcc.1 vmalloc=400M utags.blkdev=/dev/block/platform/msm_sdcc.1/by-name/utags androidboot.write_protect=0
-BOARD_RAMDISK_OFFSET := 0x01000000 
-BOARD_KERNEL_TAGS_OFFSET := 0x00000100
+BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.bootdevice=msm_sdcc.1
+BOARD_RAMDISK_OFFSET := 0x02000000 
+BOARD_KERNEL_TAGS_OFFSET := 0x1e00000
 
 
-# Motorola
-TARGET_USES_MOTOROLA_LOG := true
+# samsung
+# TARGET_USES_samsung_LOG := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -104,21 +104,21 @@ TARGET_POWERHAL_VARIANT := qcom
 BOARD_USES_QCOM_HARDWARE := false
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/motorola/falcon/ramdisk/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/samsung/matissewifi/ramdisk/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 # Release tools
-TARGET_RELEASETOOLS_EXTENSIONS := device/motorola/falcon
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matissewifi
 
 # SELinux
 
 -include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
-    device/motorola/falcon/sepolicy
+    device/samsung/matissewifi/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     akmd8963.te \
@@ -146,7 +146,7 @@ BOARD_SEPOLICY_UNION += \
 # Vendor init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/motorola/falcon/init/init_falcon.c
+TARGET_LIBINIT_DEFINES_FILE := device/samsung/matissewifi/init/init_matissewifi.c
 
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true

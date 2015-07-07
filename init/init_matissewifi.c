@@ -76,14 +76,11 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
             property_set("ro.telephony.default_network", "0");
             property_set("persist.radio.multisim.config", "");
         } else {
-            /* xt1032 */
-            property_set("ro.product.device", "falcon_umts");
-            property_set("ro.build.description", "falcon_retgb-user 5.0.2 LXB22.46-28.1 1 release-keys");
-            property_set("ro.build.fingerprint", "motorola/falcon_retgb/falcon_umts:5.0.2/LXB22.46-28.1/1:user/release-keys");
-            property_set("ro.build.product", "falcon_umts");
-            property_set("ro.mot.build.customerid", "RTGB");
-            property_set("ro.telephony.default_network", "0");
-            property_set("persist.radio.multisim.config", "");
+            /* matissewifi */
+        property_set("ro.build.fingerprint", "samsung/matissewifixx/matissewifi:5.0.2/LRX22G/T530XXU1BOD8:user/release-keys");
+        property_set("ro.build.description", "matissewifixx-user 5.0.2 LRX22G T530XXU1BOD8 release-keys");
+        property_set("ro.product.model", "SM-T530");
+        property_set("ro.product.device", "matissewifi");
         }
     } else if (ISMATCH(radio, "0x3")) {
         /* cdma */
