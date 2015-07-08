@@ -82,20 +82,19 @@ TARGET_USES_C2D_COMPOSITION := true
 BOARD_KERNEL_SEPARATED_DT := true
 KERNEL_DEFCONFIG := matissewifi_defconfig
 TARGET_KERNEL_SOURCE := kernel
-BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.selinux=permissive
 BOARD_RAMDISK_OFFSET := 0x02000000 
 BOARD_KERNEL_TAGS_OFFSET := 0x1e00000
-
-
-# samsung
-# TARGET_USES_samsung_LOG := true
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Partition sizes
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00A00000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00A00000
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x10A7DEA0
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2097152000
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 12562627584
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
@@ -137,11 +136,15 @@ BOARD_SEPOLICY_UNION += \
     platform_app.te \
     property_contexts \
     property.te \
+	recovery.te \
     rild.te \
     rmt_storage.te \
+	sdcardd.te \
     system_app.te \
     ss_rdump.te \
-    thermal-engine.te
+	time_daemon.te \
+    thermal-engine.te \
+	vold.te
 
 # Vendor init
 TARGET_UNIFIED_DEVICE := true
@@ -164,3 +167,4 @@ BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME := "wlan"
 BOARD_WLAN_DEVICE := qcwcn
+

@@ -22,7 +22,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Is the device LTE capable -->
-    <bool name="config_lte_capable">false</bool>
+    <bool name="config_lte_capable">true</bool>
 
     <!-- This string array should be overridden by the device to present a list of network
          attributes.  This is used by the connectivity manager to decide which networks can coexist
@@ -309,5 +309,8 @@
          on screen size and total memory for the largest lowmemorykiller bucket, and scaled
          proportionally to the smaller buckets. -1 keeps the default. -->
     <integer name="config_lowMemoryKillerMinFreeKbytesAbsolute">81920</integer>
+
+    <integer name="config_deviceHardwareKeys">18</integer>
+	<bool name="config_disableHomeUnlockSetting">false</bool>
 
 </resources>

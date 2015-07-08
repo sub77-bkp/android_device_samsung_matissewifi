@@ -14,17 +14,17 @@
 # limitations under the License.
 #
 
-
+PRODUCT_CHARACTERISTICS := tablet
 
 DEVICE_PACKAGE_OVERLAYS += device/samsung/matissewifi/overlay
 PRODUCT_PACKAGE_OVERLAYS += device/samsung/matissewifi/overlay
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+$(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 $(call inherit-product-if-exists, vendor/samsung/matissewifi/matissewifi-vendor.mk)
 
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 #CAF Branch
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -38,6 +38,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/qcom/msm8226/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
+# Keylayouts
+PRODUCT_COPY_FILES += \
+    device/samsung/matissewifi/keylayout/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl
+
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/samsung/matissewifi/ramdisk,root)
@@ -50,7 +54,7 @@ PRODUCT_COPY_FILES += \
 include device/qcom/msm8226/msm8226.mk
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp,adb
+    persist.sys.usb.config=mtp
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -94,7 +98,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
+TARGET_SCREEN_WIDTH := 800
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -113,8 +117,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.loc.nlp_name=com.qualcomm.services.location
 
 # Hardware
-PRODUCT_PROPERTY_OVERRIDES += \
-    qemu.hw.mainkeys=0
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    qemu.hw.mainkeys=0
 
 # Keystore
 PRODUCT_PACKAGES += \
@@ -158,6 +162,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
+
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.secure=0 \
+    ro.adb.secure=0
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.usb.mtp=0x2e82 \

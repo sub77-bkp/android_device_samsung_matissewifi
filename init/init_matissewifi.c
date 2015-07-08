@@ -39,6 +39,7 @@
 
 void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
+    char bootloader[PROP_VALUE_MAX];
     char platform[PROP_VALUE_MAX];
     char radio[PROP_VALUE_MAX];
     char device[PROP_VALUE_MAX];
@@ -63,8 +64,30 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     fp = popen("/system/bin/blkid /dev/block/platform/msm_sdcc.1/by-name/userdata | /system/xbin/grep -o 'TYPE=.*' | /system/xbin/cut -c7-10" , "r");
     fgets(fstype, sizeof(fstype), fp);
     pclose(fp);
+    property_get("ro.bootloader", bootloader);
 
-    property_set("ro.product.model", "Moto G");
+    if (strstr(bootloader, "T531")) {
+            /* matisse3g */
+        property_set("ro.build.fingerprint", "samsung/matisse3gxx/matisse3g:5.0.2/LRX22G/T531XXU1BOD8:user/release-keys");
+        property_set("ro.build.description", "matisse3gxx-user 5.0.2 LRX22G T531XXU1BOD8 release-keys");
+        property_set("ro.product.model", "SM-T531");
+        property_set("ro.product.device", "matisse3g");
+        } else if (strstr(bootloader, "T530")) {
+            /* matissewifi */
+        property_set("ro.build.fingerprint", "samsung/matissewifixx/matissewifi:5.0.2/LRX22G/T530XXU1BOD8:user/release-keys");
+        property_set("ro.build.description", "matissewifixx-user 5.0.2 LRX22G T530XXU1BOD8 release-keys");
+        property_set("ro.product.model", "SM-T530");
+        property_set("ro.product.device", "matissewifi");
+        property_set("ro.carrier", "wifi-only");
+        property_set("ro.radio.noril", "yes");
+        } else if (strstr(bootloader, "T535")) {
+            /* matisselte */
+        property_set("ro.build.fingerprint", "samsung/matisseltexx/matisselte:5.0.2/LRX22G/T535XXU1BOD8:user/release-keys");
+        property_set("ro.build.description", "matisseltexx-user 5.0.2 LRX22G T535XXU1BOD8 release-keys");
+        property_set("ro.product.model", "SM-T535");
+        property_set("ro.product.device", "matisselte");
+        }
+
     if (ISMATCH(radio, "0x1")) {
         if (ISMATCH(fstype, "ext4")) {
             /* xt1032 GPE */
@@ -141,7 +164,9 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("persist.radio.multisim.config", "");
     }
 
-    property_get("ro.product.device", device);
+
+
+   property_get("ro.product.device", device);
     strlcpy(devicename, device, sizeof(devicename));
-    INFO("Found radio id: %s data %s setting build properties for %s device\n", radio, fstype, devicename);
+    INFO("Found bootloader id %s setting build properties for %s device\n", bootloader, devicename);
 }
