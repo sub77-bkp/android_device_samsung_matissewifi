@@ -29,6 +29,8 @@ TARGET_OTA_ASSERT_DEVICE := matissewifi, matissewifixx
 # Board
 TARGET_BOARD_INFO_FILE := device/samsung/matissewifi/board-info.txt
 
+#TARGET_USES_LOGD := false
+
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_COMPRESS_CAPTURE := true

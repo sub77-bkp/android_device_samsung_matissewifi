@@ -42,9 +42,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/matissewifi/keylayout/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl
 
-PRODUCT_COPY_FILES += \
-    device/samsung/matissewifi/install-recovery.sh:system/bin/install-recovery.sh
-
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/samsung/matissewifi/ramdisk,root)
