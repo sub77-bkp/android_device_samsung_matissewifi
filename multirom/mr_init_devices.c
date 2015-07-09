@@ -26,13 +26,13 @@ const char *mr_init_devices[] =
     "/sys/devices/f9927000.i2c/i2c-5/5-004a/input*",
 
     // adb
-    "/sys/class/tty/ptmx",
-    "/sys/class/misc/android_adb",
-    "/sys/class/android_usb/android0/f_adb",
-    "/sys/bus/usb",
+    //    "/sys/class/tty/ptmx",
+     //   "/sys/class/misc/android_adb",
+     //   "/sys/class/android_usb/android0/f_adb",
+     //   "/sys/bus/usb",
 
     // USB Drive is in here
-    "/sys/devices/platform/msm_hsusb_host*",
+    //    "/sys/devices/platform/msm_hsusb_host*",
 
     // for qualcomm overlay - /dev/ion
     "/sys/devices/virtual/misc/ion",
