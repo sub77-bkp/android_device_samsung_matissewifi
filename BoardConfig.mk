@@ -57,7 +57,7 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
 
 # Build
-TARGET_SYSTEMIMAGE_USE_SQUISHER := true
+# TARGET_SYSTEMIMAGE_USE_SQUISHER := true
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
@@ -83,7 +83,7 @@ TARGET_USES_C2D_COMPOSITION := true
 # Kernel
 KERNEL_DEFCONFIG := matissewifi_defconfig
 TARGET_KERNEL_SOURCE := kernel
-BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_RAMDISK_OFFSET := 0x02000000 

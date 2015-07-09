@@ -26,6 +26,10 @@ $(call inherit-product-if-exists, vendor/samsung/matissewifi/matissewifi-vendor.
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
+# add all configurations
+# PRODUCT_AAPT_CONFIG := normal ldpi mdpi hdpi xhdpi xxhdpi
+# PRODUCT_AAPT_PREF_CONFIG := hdpi
+
 #CAF Branch
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.par.branch=LA.BF.1.1.2_rb1.24
@@ -166,16 +170,6 @@ PRODUCT_PACKAGES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.secure=0 \
     ro.adb.secure=0
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.usb.mtp=0x2e82 \
-    ro.usb.mtp_adb=0x2e76 \
-    ro.usb.ptp=0x2e83 \
-    ro.usb.ptp_adb=0x2e84 \
-    ro.usb.bpt=0x2e28 \
-    ro.usb.bpt_adb=0x2e29 \
-    ro.usb.bpteth=0x2e2a \
-    ro.usb.bpteth_adb=0x2e2b
 
 # Wifi
 PRODUCT_PACKAGES += \
