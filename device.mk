@@ -8,7 +8,8 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/kernel:kernel \
-    $(LOCAL_PATH)/dt.img:dt.img
+    $(LOCAL_PATH)/dt.img:dt.img \
+    $(LOCAL_PATH)/init:init
 
 $(call inherit-product, build/target/product/full.mk)
 
