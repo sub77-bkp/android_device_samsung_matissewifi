@@ -30,6 +30,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_AAPT_CONFIG := normal ldpi mdpi hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
+# Packs
+PRODUCT_PACKAGES += \
+    openssh
+
+
 #CAF Branch
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.par.branch=LA.BF.1.1.2_rb1.24
