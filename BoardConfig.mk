@@ -41,9 +41,9 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 # USB Mounting
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/file
 
-#
 TARGET_TOUCHBOOST_FREQUENCY := 1500
 
+TARGET_RECOVERY_INITRC := recovery.qcom.rc
 
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -55,7 +55,7 @@ TARGET_RECOVERY_QCOM_RTC_FIX := true
 # TWRP-Specific
 TW_THEME := landscape_hdpi
 TW_NEW_ION_HEAP := true
-#TW_DISABLE_DOUBLE_BUFFERING := true
+TW_DISABLE_DOUBLE_BUFFERING := true
 HAVE_SELINUX := true
 RECOVERY_SDCARD_ON_DATA := true
 TW_FLASH_FROM_STORAGE := true
@@ -70,6 +70,7 @@ TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 BOARD_SUPPRESS_SECURE_ERASE := true
+TW_HAS_DOWNLOAD_MODE := true
 
 MR_INPUT_TYPE := type_b
 MR_INIT_DEVICES := device/samsung/matissewifi/mr_init_devices.c

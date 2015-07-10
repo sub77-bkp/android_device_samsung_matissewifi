@@ -1,5 +1,7 @@
 LOCAL_PATH := device/samsung/matissewifi
 
+    $(call find-copy-subdir-files,*,device/samsung/matissewifi/prebuilt/system,system)
+
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
 else
@@ -14,3 +16,6 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_NAME := matissewifi
+
+
+
