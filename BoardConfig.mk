@@ -24,7 +24,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno305
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := matissewifi, matissewifixx
+TARGET_OTA_ASSERT_DEVICE := matissewifi, matissewifixx, matisse3g, matisse3gxx
 
 # Board
 TARGET_BOARD_INFO_FILE := device/samsung/matissewifi/board-info.txt
