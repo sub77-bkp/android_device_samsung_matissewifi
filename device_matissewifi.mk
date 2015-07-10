@@ -23,6 +23,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 $(call inherit-product-if-exists, vendor/samsung/matissewifi/matissewifi-vendor.mk)
 
+# Permissions
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
+
 PRODUCT_AAPT_CONFIG := normal ldpi mdpi hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
