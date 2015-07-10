@@ -27,6 +27,8 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 #TARGET_PREBUILT_KERNEL := device/samsung/matissewifi/kernel
 #BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matissewifi/custombootimg.mk
 
+#TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/matissewifi/kernel
+
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matissewifi/mkbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
 TARGET_KERNEL_CONFIG := matissewifi_defconfig
@@ -43,7 +45,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/f
 
 TARGET_TOUCHBOOST_FREQUENCY := 1500
 
-TARGET_RECOVERY_INITRC := recovery.qcom.rc
+#TARGET_RECOVERY_INITRC := recovery.qcom.rc
 
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -53,13 +55,16 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 
 # TWRP-Specific
+
+#TWRP_EVENT_LOGGING := true
+
 TW_THEME := landscape_hdpi
 TW_NEW_ION_HEAP := true
-TW_DISABLE_DOUBLE_BUFFERING := true
+#TW_DISABLE_DOUBLE_BUFFERING := true
 HAVE_SELINUX := true
 RECOVERY_SDCARD_ON_DATA := true
-TW_FLASH_FROM_STORAGE := true
-TW_SCREEN_BLANK_ON_BOOT := true
+#TW_FLASH_FROM_STORAGE := true
+#TW_SCREEN_BLANK_ON_BOOT := true
 TW_NO_USB_STORAGE := true
 #TW_INCLUDE_CRYPTO := true
 TW_INTERNAL_STORAGE_PATH := "/data/media/0"
@@ -70,7 +75,7 @@ TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 BOARD_SUPPRESS_SECURE_ERASE := true
-TW_HAS_DOWNLOAD_MODE := true
+#TW_HAS_DOWNLOAD_MODE := true
 
 MR_INPUT_TYPE := type_b
 MR_INIT_DEVICES := device/samsung/matissewifi/mr_init_devices.c
