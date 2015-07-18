@@ -29,16 +29,12 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 # Kernel
 #TARGET_PREBUILT_KERNEL := device/samsung/matissewifi/kernel
-#BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matissewifi/custombootimg.mk
 
 #TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/matissewifi/kernel
 
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matisse/mkbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8226
-#TARGET_KERNEL_CONFIG := matissewifi_defconfig
-TARGET_KERNEL_CONFIG := msm8226-sec_defconfig
-TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matisse_defconfig
-TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
+TARGET_KERNEL_CONFIG := matisse_defconfig
 BOARD_KERNEL_SEPARATED_DT := true
 
 BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.bootdevice=msm_sdcc.1
@@ -56,10 +52,10 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/f
 
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
-#TARGET_USERIMAGES_USE_F2FS := true
+TARGET_USERIMAGES_USE_F2FS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_QCOM_RTC_FIX := true
+#TARGET_RECOVERY_QCOM_RTC_FIX := true
 
 # TWRP-Specific
 
@@ -70,10 +66,10 @@ TW_NEW_ION_HEAP := true
 #TW_DISABLE_DOUBLE_BUFFERING := true
 HAVE_SELINUX := true
 RECOVERY_SDCARD_ON_DATA := true
-#TW_FLASH_FROM_STORAGE := true
-#TW_SCREEN_BLANK_ON_BOOT := true
+TW_FLASH_FROM_STORAGE := true
+TW_SCREEN_BLANK_ON_BOOT := true
 TW_NO_USB_STORAGE := true
-#TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO := true
 TW_INTERNAL_STORAGE_PATH := "/data/media/0"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
 TW_EXTERNAL_STORAGE_PATH := "/external_sd"
@@ -82,7 +78,7 @@ TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 BOARD_SUPPRESS_SECURE_ERASE := true
-#TW_HAS_DOWNLOAD_MODE := true
+TW_HAS_DOWNLOAD_MODE := true
 
 MR_INPUT_TYPE := type_b
 MR_INIT_DEVICES := device/samsung/matisse/mr_init_devices.c
@@ -99,8 +95,4 @@ MR_PIXEL_FORMAT := "RGBX_8888"
 MR_USE_QCOM_OVERLAY := true
 MR_QCOM_OVERLAY_HEADER := device/samsung/matisse/mr_qcom_overlay.h
 MR_QCOM_OVERLAY_CUSTOM_PIXEL_FORMAT := MDP_RGBX_8888
-#MR_DEVICE_HOOKS := device/samsung/matisse3g/multirom/mr_hooks.c
-#MR_DEVICE_HOOKS_VER := 5
-#MR_DEVICE_RECOVERY_HOOKS := device/samsung/matisse3g/multirom/mr_hooks_recovery.c
-#MR_DEVICE_RECOVERY_HOOKS_VER := 1
-#MR_CONTINUOUS_FB_UPDATE := true
+
