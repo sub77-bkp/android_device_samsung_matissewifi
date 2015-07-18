@@ -1,3 +1,8 @@
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_msm
+TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_matisse.c
+TARGET_UNIFIED_DEVICE := true
+
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := MSM8226
@@ -29,9 +34,12 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 #TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/matissewifi/kernel
 
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matissewifi/mkbootimg.mk
-TARGET_KERNEL_SOURCE := kernel/samsung/matissewifi
-TARGET_KERNEL_CONFIG := matissewifi_defconfig
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matisse/mkbootimg.mk
+TARGET_KERNEL_SOURCE := kernel/samsung/msm8226
+#TARGET_KERNEL_CONFIG := matissewifi_defconfig
+TARGET_KERNEL_CONFIG := msm8226-sec_defconfig
+TARGET_KERNEL_VARIANT_CONFIG := msm8226-sec_matisse_defconfig
+TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
 BOARD_KERNEL_SEPARATED_DT := true
 
 BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 androidboot.bootdevice=msm_sdcc.1
@@ -43,13 +51,13 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 # USB Mounting
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/file
 
-TARGET_TOUCHBOOST_FREQUENCY := 1500
+#TARGET_TOUCHBOOST_FREQUENCY := 1500
 
-#TARGET_RECOVERY_INITRC := recovery.qcom.rc
+#TARGET_RECOVERY_INITRC := recovery.usb.rc
 
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
+#TARGET_USERIMAGES_USE_F2FS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_QCOM_RTC_FIX := true
@@ -78,11 +86,11 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 #TW_HAS_DOWNLOAD_MODE := true
 
 MR_INPUT_TYPE := type_b
-MR_INIT_DEVICES := device/samsung/matissewifi/mr_init_devices.c
+MR_INIT_DEVICES := device/samsung/matisse/mr_init_devices.c
 MR_DPI := hdpi
 MR_DPI_MUL := 1
 MR_DPI_FONT := 160
-MR_FSTAB := device/samsung/matissewifi/recovery.fstab
+MR_FSTAB := device/samsung/matisse/recovery.fstab
 MR_USE_MROM_FSTAB := true
 # End of first RAM region is 0x083fffff, so we set it to for example 0x06500000
 MR_KEXEC_MEM_MIN := 0x06200000
@@ -90,7 +98,7 @@ MR_RD_ADDR := 0x02200000
 MR_KEXEC_DTB := true
 MR_PIXEL_FORMAT := "RGBX_8888"
 MR_USE_QCOM_OVERLAY := true
-MR_QCOM_OVERLAY_HEADER := device/samsung/matissewifi/mr_qcom_overlay.h
+MR_QCOM_OVERLAY_HEADER := device/samsung/matisse/mr_qcom_overlay.h
 MR_QCOM_OVERLAY_CUSTOM_PIXEL_FORMAT := MDP_RGBX_8888
 #MR_DEVICE_HOOKS := device/samsung/matisse3g/multirom/mr_hooks.c
 #MR_DEVICE_HOOKS_VER := 5

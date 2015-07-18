@@ -30,7 +30,8 @@ const char *mr_init_devices[] =
 	"/sys/class/input/event4", //touch
 	"/sys/devices/virtual/input*",
 	"/sys/devices/virtual/misc/uinput",
-    "/sys/devices/f9927000.i2c/i2c-5/5-004a/input*",
+//    "/sys/devices/f9927000.i2c/i2c-5/5-004a/input*",
+ "/sys/devices/f9927000.i2c/i2c-5/5-004a/input/input2",
 
     // adb
     "/sys/class/tty/ptmx",
