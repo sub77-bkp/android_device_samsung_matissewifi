@@ -1,8 +1,7 @@
-# Init
-TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_matisse.c
+# Vendor Init
 TARGET_UNIFIED_DEVICE := true
-
+TARGET_INIT_VENDOR_LIB := libinit_matisse
+TARGET_LIBINIT_DEFINES_FILE := device/samsung/matisse/init/init_matisse.c
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := MSM8226
