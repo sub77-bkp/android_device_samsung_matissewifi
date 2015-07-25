@@ -6,5 +6,5 @@ PRODUCT_NAME := omni_matisse
 PRODUCT_BRAND := Samsung
 PRODUCT_MANUFACTURER := Samsung
 PRODUCT_DEVICE := matisse
-#PRODUCT_MODEL := SM-T530
+
 

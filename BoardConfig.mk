@@ -1,15 +1,16 @@
+TARGET_OTA_ASSERT_DEVICE := matissewifi,matissewifiue,matissewifiuexx,matisse3g,matisse3gxx,matisselte,matisseltexx,matisse
+
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_matisse
-TARGET_LIBINIT_DEFINES_FILE := device/samsung/matisse/init/init_matisse.c
+TARGET_LIBINIT_DEFINES_FILE := init_matisse.c
+
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := MSM8226
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8226
-
-TARGET_UNIFIED_DEVICE := true
 
 # Architecture
 TARGET_ARCH := arm
@@ -27,10 +28,12 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
-# Kernel
-#TARGET_PREBUILT_KERNEL := device/samsung/matissewifi/kernel
+# Qualcomm support
+COMMON_GLOBAL_CFLAGS += -DQCOM_BSP
+TARGET_USES_QCOM_BSP := true
 
-#TARGET_PREBUILT_RECOVERY_KERNEL := device/samsung/matissewifi/kernel
+# Time services
+BOARD_USES_QC_TIME_SERVICES := true
 
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matisse/mkbootimg.mk
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8226
@@ -46,9 +49,8 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 # USB Mounting
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/file
 
-#TARGET_TOUCHBOOST_FREQUENCY := 1500
-
-#TARGET_RECOVERY_INITRC := recovery.usb.rc
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/matisse
 
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -60,21 +62,16 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 # TWRP-Specific
 
 #TWRP_EVENT_LOGGING := true
-
+TW_HAS_MTP := true
 TW_THEME := landscape_hdpi
 TW_NEW_ION_HEAP := true
 #TW_DISABLE_DOUBLE_BUFFERING := true
 HAVE_SELINUX := true
 RECOVERY_SDCARD_ON_DATA := true
 TW_FLASH_FROM_STORAGE := true
-TW_SCREEN_BLANK_ON_BOOT := true
-TW_NO_USB_STORAGE := true
+#TW_SCREEN_BLANK_ON_BOOT := true
+#TW_NO_USB_STORAGE := true
 TW_INCLUDE_CRYPTO := true
-TW_INTERNAL_STORAGE_PATH := "/data/media/0"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-TW_EXTERNAL_STORAGE_PATH := "/external_sd"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
-TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 BOARD_SUPPRESS_SECURE_ERASE := true
@@ -95,4 +92,8 @@ MR_PIXEL_FORMAT := "RGBX_8888"
 MR_USE_QCOM_OVERLAY := true
 MR_QCOM_OVERLAY_HEADER := device/samsung/matisse/mr_qcom_overlay.h
 MR_QCOM_OVERLAY_CUSTOM_PIXEL_FORMAT := MDP_RGBX_8888
+MR_DEVICE_VARIANTS := matissewifi matisse3g matisselte matissewifiue
+
+# SELinux
+-include device/qcom/sepolicy/sepolicy.mk
 
