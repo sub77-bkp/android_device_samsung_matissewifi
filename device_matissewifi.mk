@@ -126,8 +126,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.loc.nlp_name=com.qualcomm.services.location
 
 # Hardware
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    qemu.hw.mainkeys=0
+PRODUCT_PROPERTY_OVERRIDES += \
+    qemu.hw.mainkeys=1
 
 # Keystore
 PRODUCT_PACKAGES += \
