@@ -49,7 +49,8 @@ PRODUCT_COPY_FILES += \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    device/samsung/matissewifi/keylayout/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl
+    device/samsung/matissewifi/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl \
+    device/samsung/matissewifi/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
